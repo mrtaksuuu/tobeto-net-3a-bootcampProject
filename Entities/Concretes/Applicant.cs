@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entities.Concretes
 {
-    public class Employee : User
+    public class Applicant : User
     {
         public int UserId { get; set; }
-        public string Position { get; set; }
+        public string About { get; set; }
 
-        public Employee()
+        public Applicant()
         {
 
         }
 
-        public Employee(int userId, string position, string userName, string firstName, string lastName, DateTime dateOfBirth, string nationalIdentity, string eMail, string password)
+        public Applicant(int userId, string about, string userName, string firstName, string lastName, DateTime dateOfBirth, string nationalIdentity, string eMail, string password)
         {
             UserId = userId;
-            Position = position;
+            About = about;
             UserName = userName;
             FirstName = firstName;
             LastName = lastName;
