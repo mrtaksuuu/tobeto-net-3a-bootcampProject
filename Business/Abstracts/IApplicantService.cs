@@ -1,5 +1,6 @@
 ﻿using Business.Requests.Applicants;
 using Business.Responses.Applicants;
+using Core.Utilities.Result;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace Business.Abstracts
 {
     public interface IApplicantService
     {
-        Task<CreatedApplicantResponse> AddAsync(CreateApplicantRequest request);
-        Task<UpdatedApplicantResponse> UpdateAsync(UpdateApplicantRequest request);
-        Task<DeletedApplicantResponse> DeleteAsync(DeleteApplicantRequest request);
-        Task<List<GetAllApplicantResponse>> GetAllAsync();
-        Task<GetByIdApplicantResponse> GetByIdAsync(int id);
-
+        Task<IDataResult<List<GetAllApplicantResponse>>> GetAllAsync();
+        Task<IDataResult<GetByIdApplicantResponse>> GetByIdAsync(int id);
+        Task<IDataResult<CreateApplicantResponse>> AddAsync(CreateApplicantRequest request);
+        Task<IResult> DeleteAsync(DeleteApplicantRequest request);
+        Task<IDataResult<UpdateApplicantResponse>> UpdateAsync(UpdateApplicantRequest request);
     }
 }
+

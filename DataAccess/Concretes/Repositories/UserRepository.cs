@@ -2,6 +2,7 @@
 using DataAccess.Abstracts;
 using DataAccess.Concretes.EntityFramework.Contexts;
 using Entities.Concretes;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,10 @@ namespace DataAccess.Concretes.Repositories
 {
     public class UserRepository : EfRepositoryBase<User, int, BaseDbContext>, IUserRepository
     {
+        protected readonly BaseDbContext _context;
         public UserRepository(BaseDbContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

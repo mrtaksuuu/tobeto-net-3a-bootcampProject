@@ -18,19 +18,19 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<CreatedEmployeeResponse> AddAsync(CreateEmployeeRequest request)
+        public async Task<CreateEmployeeResponse> AddAsync(CreateEmployeeRequest request)
         {
             return await _employeeService.AddAsync(request);
         }
 
         [HttpDelete]
-        public async Task<DeletedEmployeeResponse> DeletedAsync(DeleteEmployeeRequest request)
+        public async Task<DeleteEmployeeResponse> DeletedAsync(DeleteEmployeeRequest request)
         {
             return await _employeeService.DeleteAsync(request);
         }
 
         [HttpPut]
-        public async Task<UpdatedEmployeeResponse> UpdateAsync(UpdateEmployeeRequest request)
+        public async Task<UpdateEmployeeResponse> UpdateAsync(UpdateEmployeeRequest request)
         {
             return await _employeeService.UpdateAsync(request);
         }

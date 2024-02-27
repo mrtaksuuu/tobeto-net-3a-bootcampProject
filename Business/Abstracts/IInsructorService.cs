@@ -1,5 +1,6 @@
 ﻿using Business.Requests.Instructors;
 using Business.Responses.Instructors;
+using Core.Utilities.Result;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,13 @@ namespace Business.Abstracts
 {
     public interface IInstructorService
     {
-        Task<CreatedInstructorResponse> AddAsync(CreateInstructorRequest request);
-        Task<UpdatedInstructorResponse> UpdateAsync(UpdateInstructorRequest request);
-        Task<DeletedInstructorResponse> DeleteAsync(DeleteInstructorRequest request);
-        Task<List<GetAllInstructorResponse>> GetAllAsync();
-        Task<GetByIdInstructorResponse> GetByIdAsync(int id);
+        public interface IInstructorService
+        {
+            Task<IDataResult<List<GetAllInstructorResponse>>> GetAllAsync();
+            Task<IDataResult<GetByIdInstructorResponse>> GetByIdAsync(int id);
+            Task<IDataResult<CreateInstructorResponse>> AddAsync(CreateInstructorRequest request);
+            Task<IResult> DeleteAsync(DeleteInstructorRequest request);
+            Task<IDataResult<UpdateInstructorResponse>> UpdateAsync(UpdateInstructorRequest request);
+        }
     }
 }

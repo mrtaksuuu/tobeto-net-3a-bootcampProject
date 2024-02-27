@@ -16,13 +16,18 @@ namespace DataAccess
     {
         public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.
-                GetConnectionString("TobetoNet3AConnectionString")));
+            services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration
+                .GetConnectionString("TobetoNet3AConnectionString")));
 
-             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IInstructorRepository, InstructorRepository>();
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IApplicantRepository, ApplicantRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IInstructorRepository, InstructorRepository>();
+            services.AddScoped<IApplicationRepository, ApplicationRepository>();
+            services.AddScoped<IApplicationStateRepository, ApplicationStateRepository>();
+            services.AddScoped<IBootcampRepository, BootcampRepository>();
+            services.AddScoped<IBootcampStateRepository, BootcampStateRepository>();
+            services.AddScoped<IBlacklistRepository, BlacklistRepository>();
             return services;
         }
     }

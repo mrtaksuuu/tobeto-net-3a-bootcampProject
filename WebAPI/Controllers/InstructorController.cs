@@ -18,19 +18,19 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<CreatedInstructorResponse> AddAsync(CreateInstructorRequest request)
+        public async Task<CreateInstructorResponse> AddAsync(CreateInstructorRequest request)
         {
             return await _instructorService.AddAsync(request);
         }
 
         [HttpDelete]
-        public async Task<DeletedInstructorResponse> DeletedAsync(DeleteInstructorRequest request)
+        public async Task<DeleteInstructorResponse> DeletedAsync(DeleteInstructorRequest request)
         {
             return await _instructorService.DeleteAsync(request);
         }
 
         [HttpPut]
-        public async Task<UpdatedInstructorResponse> UpdateAsync(UpdateInstructorRequest request)
+        public async Task<UpdateInstructorResponse> UpdateAsync(UpdateInstructorRequest request)
         {
             return await _instructorService.UpdateAsync(request);
         }
